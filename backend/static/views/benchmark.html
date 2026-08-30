@@ -1,0 +1,109 @@
+<section class="page" data-page="benchmark">
+        <div class="pageTitle">
+          <div>
+            <h2>Real dataset study</h2>
+            <p>Execute the reproducible DETR and Faster R-CNN robustness matrix on labelled images.</p>
+          </div>
+          <div class="pageActions">
+            <button id="benchmark" class="secondaryButton" type="button">Start study</button>
+            <button id="cancelBenchmark" class="secondaryButton" type="button" disabled>Cancel</button>
+            <button id="exportCsv" class="secondaryButton" type="button" disabled>Export CSV</button>
+            <button id="exportJson" class="secondaryButton" type="button" disabled>Export JSON</button>
+          </div>
+        </div>
+
+        <section class="researchGrid">
+        <section class="studyPanel studyRunnerPanel">
+          <div class="sectionHeading">
+            <span>Study configuration</span>
+            <strong id="studyStatus">Ready</strong>
+          </div>
+          <div class="studyControls">
+            <label>
+              <span>Dataset source</span>
+              <select id="studyDatasetSource">
+                <option value="builtin">Bundled COCO128</option>
+                <option value="coco-val2017">Local COCO val2017 / 5,000 images</option>
+                <option value="selected">Selected Dataset ZIP</option>
+              </select>
+            </label>
+            <label>
+              <span>Evaluation images</span>
+              <select id="studyImageCount">
+                <option value="1">1 / smoke run</option>
+                <option value="4" selected>4 / quick study</option>
+                <option value="16">16 / standard study</option>
+                <option value="128">128 / pilot study</option>
+                <option value="500">500 / thesis study</option>
+                <option value="1000">1,000 / extended study</option>
+                <option value="5000">5,000 / all labelled images</option>
+              </select>
+            </label>
+            <label>
+              <span>Random seed</span>
+              <input id="studySeed" type="number" value="2026" min="0" step="1" />
+            </label>
+          </div>
+          <div class="studyProgressRow">
+            <progress id="studyProgress" max="1" value="0"></progress>
+            <strong id="studyProgressValue">0%</strong>
+          </div>
+          <div class="studyStatusLine">
+            <span id="studyCurrent">Waiting to start</span>
+            <span id="studyTaskCount">0 / 0 inference tasks</span>
+          </div>
+        </section>
+        <section class="studyPanel linkedEvidencePanel">
+          <div class="sectionHeading">
+            <span>Dataset-to-benchmark link</span>
+            <strong id="benchmarkDatasetCondition">No Dataset batch</strong>
+          </div>
+          <div class="linkedEvidenceCards">
+            <div class="linkedEvidenceCard">
+              <span>Real-image batch</span>
+              <strong id="benchmarkDatasetEvidence">-</strong>
+              <p id="benchmarkDatasetDetail">The study uses labelled images for standard COCO evaluation.</p>
+            </div>
+            <div class="linkedEvidenceCard">
+              <span>Evaluation protocol</span>
+              <strong id="benchmarkDatasetConfidence">-</strong>
+              <p>COCO AP@[.50:.95], AP50, AP75, AR100, and object-size metrics.</p>
+            </div>
+            <div class="linkedEvidenceCard">
+              <span>Report status</span>
+              <strong id="benchmarkReportLink">Report-ready after batch</strong>
+              <p>Results include configuration, weight hashes, and exact corruption parameters.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="studyPanel dashboardPanel">
+          <div class="sectionHeading">
+            <span>Results dashboard</span>
+            <strong id="dashboardSummary">Awaiting benchmark</strong>
+          </div>
+          <div class="dashboardCards">
+            <div class="dashboardCard">
+              <span>Benchmark runs</span>
+              <strong id="benchRunCount">-</strong>
+              <p>real model-degradation-severity conditions</p>
+            </div>
+            <div class="dashboardCard">
+              <span>Most robust model</span>
+              <strong id="bestModel">-</strong>
+              <p id="bestModelDetail">Run benchmark to estimate mean mAP.</p>
+            </div>
+            <div class="dashboardCard warningCard">
+              <span>Largest degradation impact</span>
+              <strong id="worstDegradation">-</strong>
+              <p id="worstDegradationDetail">Severity 0 to 5 performance drop.</p>
+            </div>
+            <div class="dashboardCard">
+              <span>Worst case</span>
+              <strong id="worstCaseMap">-</strong>
+              <p id="worstCaseDetail">Lowest mAP condition in the benchmark.</p>
+            </div>
+          </div>
+        </section>
+        </section>
+      </section>

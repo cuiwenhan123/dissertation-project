@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and IDEs
+.venv/
+venv/
+.idea/
+.vscode/
+*.iml
+
+# Local configuration
+.env
+.DS_Store
+
+# Runtime state and generated exports
+runs/*
+!runs/.gitkeep
+exports/
+*.log
+
+# Datasets and pretrained weights are acquired separately
+datasets/
+models/
+*.pth
+*.pt
+*.safetensors
+
+# Temporary uploads
+uploads/
+tmp/

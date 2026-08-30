@@ -1,0 +1,406 @@
+.curvesGrid {
+  grid-template-columns: 1fr;
+}
+
+.curveCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.curveCard {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-2);
+  padding: 12px;
+}
+
+.curveCard svg {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.curveCard line {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.curveCard text {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.point {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.transformerPoint {
+  fill: var(--teal);
+}
+
+.cnnPoint {
+  fill: var(--rust);
+}
+
+.compactHeading {
+  padding-bottom: 8px;
+}
+
+.emptyState {
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--muted);
+  padding: 18px;
+}
+
+.datasetPreviewPanel {
+  grid-column: 1 / -1;
+}
+
+.previewCards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sampleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 40px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--muted);
+  padding: 10px;
+  font-size: 13px;
+}
+
+.sampleChip,
+.modePill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal-dark);
+  padding: 0 9px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.failureGrid,
+.classGrid {
+  grid-template-columns: 1fr;
+}
+
+.failureCards,
+.classCards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.transitionActions select {
+  width: auto;
+  min-width: 176px;
+}
+
+.transitionSummaryBand {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.transitionStats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+}
+
+.transitionStats > div {
+  min-width: 0;
+  padding: 2px 18px;
+  border-left: 1px solid var(--line);
+}
+
+.transitionStats > div:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.transitionStats dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.transitionStats dd {
+  margin: 7px 0 0;
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 760;
+  line-height: 1.05;
+}
+
+.transitionStats p {
+  line-height: 1.35;
+}
+
+.transitionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.transitionMatrixPanel,
+.transitionSizePanel,
+.transitionExamplesPanel {
+  grid-column: 1 / -1;
+}
+
+.transitionMatrixPanel .sectionHeading select {
+  width: auto;
+  min-width: 190px;
+}
+
+.transitionChart {
+  display: grid;
+  gap: 8px;
+}
+
+.transitionChart svg {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.transitionChart line {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.transitionChart text {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.transitionLine {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.retentionLine {
+  stroke: var(--teal);
+}
+
+.survivalLine {
+  stroke: var(--rust);
+}
+
+.retentionPoint,
+.survivalPoint {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.retentionPoint {
+  fill: var(--teal);
+}
+
+.survivalPoint {
+  fill: var(--rust);
+}
+
+.transitionLegend {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.transitionLegend span {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.transitionLegend i {
+  width: 20px;
+  height: 4px;
+  border-radius: 999px;
+}
+
+.retentionSwatch {
+  background: var(--teal);
+}
+
+.survivalSwatch {
+  background: var(--rust);
+}
+
+.failureBars {
+  display: grid;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.failureBarRow {
+  display: grid;
+  grid-template-columns: 92px minmax(80px, 1fr) 112px;
+  gap: 10px;
+  align-items: center;
+  min-height: 26px;
+}
+
+.failureBarRow > span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.failureBarTrack {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #e7ece8;
+}
+
+.failureBarTrack i {
+  display: block;
+  height: 100%;
+  min-width: 2px;
+  border-radius: inherit;
+  background: var(--rust);
+}
+
+.stableBar .failureBarTrack i {
+  background: var(--teal);
+}
+
+.failureBarRow strong {
+  text-align: right;
+  font-size: 13px;
+}
+
+.failureBarRow small,
+.tableSubvalue {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.transitionMatrixWrap table,
+.transitionSizeTable {
+  min-width: 760px;
+}
+
+.transitionExamplesTable {
+  min-width: 1080px;
+}
+
+.transitionMatrix th,
+.transitionMatrix td {
+  text-align: center;
+}
+
+.transitionMatrix tbody th {
+  color: var(--ink);
+  text-align: left;
+}
+
+.transitionMatrix td strong,
+.transitionMatrix td span {
+  display: block;
+}
+
+.transitionMatrix td span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.statePill {
+  display: inline-flex;
+  width: 46px;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.state-correct {
+  border-color: rgba(23, 107, 99, 0.34);
+  background: #e8f3ef;
+  color: var(--teal-dark);
+}
+
+.state-localisation {
+  border-color: rgba(56, 95, 136, 0.34);
+  background: #edf2f7;
+  color: #294e75;
+}
+
+.state-classification {
+  border-color: rgba(170, 82, 63, 0.34);
+  background: #f8ece8;
+  color: #7f3c2e;
+}
+
+.state-missed {
+  border-color: #c6cbc7;
+  background: #ecefed;
+  color: #4f5954;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 1120px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+td {
+  color: var(--ink);
+}
+
+tbody tr.selectedRow td {
+  background: #edf5f2;
+}
+

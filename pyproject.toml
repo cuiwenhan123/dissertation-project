@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "detection-robustness-workbench"
+version = "1.0.0"
+description = "A reproducible workbench for evaluating object detectors under controlled image degradation."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{name = "Cui Wenhan"}]
+dependencies = [
+  "numpy==2.5.0",
+  "opencv-python==4.13.0.92",
+  "Pillow==10.3.0",
+  "pycocotools==2.0.11",
+  "PyYAML==6.0.1",
+  "torch==2.3.1",
+  "torchvision==0.18.1",
+  "transformers==4.57.6",
+]
+
+[project.scripts]
+robustness-workbench = "backend.application:main"
+
+[tool.setuptools]
+packages = ["backend"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+backend = [
+  "static/*.html",
+  "static/css/*.css",
+  "static/js/*.js",
+  "static/js/core/*.js",
+  "static/js/features/*.js",
+  "static/views/*.html",
+  "research_data/*.json",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]

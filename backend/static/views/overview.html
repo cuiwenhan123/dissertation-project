@@ -1,0 +1,93 @@
+<section class="page active" data-page="overview">
+        <div class="pageTitle">
+          <div>
+            <h2>Single-run evaluation</h2>
+            <p>Configure one controlled degradation experiment and inspect predictions, metrics, and failure modes.</p>
+          </div>
+          <button id="run" class="runButton" type="button">
+            <span class="buttonIcon" aria-hidden="true"></span>
+            <span>Evaluate</span>
+          </button>
+        </div>
+
+        <section class="workbench">
+        <aside class="controlPanel">
+          <div class="panelHeading">
+            <span>Experiment setup</span>
+            <strong id="severityBadge">Severity 3</strong>
+          </div>
+
+          <label for="scene">Scene</label>
+          <select id="scene">
+            <option value="street">Urban street</option>
+            <option value="warehouse">Warehouse aisle</option>
+          </select>
+
+          <label for="model">Detector</label>
+          <select id="model">
+            <option value="transformer">DETR-style Transformer</option>
+            <option value="cnn">Faster R-CNN-style Baseline</option>
+          </select>
+
+          <label for="degradation">Degradation</label>
+          <select id="degradation">
+            <option value="blur">Motion blur</option>
+            <option value="lowlight">Low illumination</option>
+            <option value="jpeg">JPEG artefacts</option>
+          </select>
+
+          <label for="severity">Severity</label>
+          <input id="severity" type="range" min="0" max="5" value="3" />
+
+          <div class="backendCard">
+            <span>Active backend</span>
+            <strong id="backend">-</strong>
+          </div>
+        </aside>
+
+        <section class="resultsPanel">
+          <div class="images">
+            <figure>
+              <figcaption>
+                <span>Clean input</span>
+                <strong>Ground truth</strong>
+              </figcaption>
+              <img id="clean" alt="Clean scene with ground-truth boxes" />
+            </figure>
+            <figure>
+              <figcaption>
+                <span>Degraded input</span>
+                <strong>Predictions</strong>
+              </figcaption>
+              <img id="result" alt="Degraded scene with prediction boxes" />
+            </figure>
+          </div>
+
+          <section class="metrics" aria-label="Evaluation metrics">
+            <div class="metric primaryMetric">
+              <span>mAP</span>
+              <strong id="map">-</strong>
+            </div>
+            <div class="metric">
+              <span>AP50</span>
+              <strong id="ap50">-</strong>
+            </div>
+            <div class="metric">
+              <span>Missed</span>
+              <strong id="missed">-</strong>
+            </div>
+            <div class="metric">
+              <span>False positives</span>
+              <strong id="falsePositive">-</strong>
+            </div>
+          </section>
+
+          <section class="analysisPanel" aria-label="Failure analysis">
+            <div>
+              <span>Failure analysis</span>
+              <p id="analysisText">Run an evaluation to inspect degradation-driven failure modes.</p>
+            </div>
+          </section>
+        </section>
+        </section>
+      </section>

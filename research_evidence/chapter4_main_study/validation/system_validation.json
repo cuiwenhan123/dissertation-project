@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-16",
+  "unitTests": {
+    "command": "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m unittest discover -s tests -v",
+    "testsRun": 13,
+    "failures": 0,
+    "errors": 0
+  },
+  "runtimeStatus": {
+    "endpoint": "/api/status",
+    "detrWeightsAvailable": true,
+    "fasterRcnnWeightsAvailable": true,
+    "cocoVal2017Available": true,
+    "modelsLoaded": [
+      "detr",
+      "torchvision"
+    ],
+    "modelErrors": {}
+  },
+  "liveComparison": {
+    "endpoint": "/api/compare",
+    "scene": "street",
+    "degradation": "jpeg",
+    "severity": 2,
+    "transformerBackend": "transformers-detr-resnet-50",
+    "cnnBackend": "torchvision-fasterrcnn",
+    "bothResponsesContainedMetrics": true
+  }
+}

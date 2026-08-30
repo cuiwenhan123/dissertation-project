@@ -1,0 +1,62 @@
+<section class="page" data-page="log">
+        <div class="pageTitle">
+          <div>
+            <h2>Experiment log</h2>
+            <p>Review the latest single-run evaluations and compare their core metrics.</p>
+          </div>
+        </div>
+        <section class="studyPanel historyPanel">
+          <div class="sectionHeading">
+            <span>Browser session log</span>
+            <strong id="historyCount">0 runs</strong>
+          </div>
+          <div class="tableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Run</th>
+                  <th>Scene</th>
+                  <th>Detector</th>
+                  <th>Degradation</th>
+                  <th>Severity</th>
+                  <th>mAP</th>
+                  <th>AP50</th>
+                  <th>Missed</th>
+                  <th>False +</th>
+                </tr>
+              </thead>
+              <tbody id="historyBody">
+                <tr>
+                  <td colspan="9">No experiment recorded yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="studyPanel historyPanel">
+          <div class="sectionHeading">
+            <span>Saved experiment runs</span>
+            <strong id="savedRunCount">0 saved</strong>
+          </div>
+          <div class="pageActions savedRunActions">
+            <button id="refreshRuns" class="secondaryButton" type="button">Refresh saved runs</button>
+          </div>
+          <div class="tableWrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Saved</th>
+                  <th>Type</th>
+                  <th>Created</th>
+                  <th>Condition</th>
+                  <th>Evidence</th>
+                </tr>
+              </thead>
+              <tbody id="savedRunBody">
+                <tr><td colspan="5">No backend-saved experiments yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>

@@ -1,0 +1,70 @@
+<section class="page" data-page="comparison">
+        <div class="pageTitle">
+          <div>
+            <h2>Detector comparison</h2>
+            <p>Compare DETR-style Transformer behaviour against a CNN baseline under the current scene and degradation settings.</p>
+          </div>
+          <div class="pageActions">
+            <button id="compare" class="secondaryButton" type="button">Compare</button>
+            <button id="sweep" class="secondaryButton" type="button">Sweep</button>
+          </div>
+        </div>
+
+        <section class="researchGrid">
+          <section class="studyPanel linkedEvidencePanel">
+            <div class="sectionHeading">
+              <span>Linked Dataset evidence</span>
+              <strong id="comparisonDatasetCondition">No Dataset batch</strong>
+            </div>
+            <div class="linkedEvidenceCards">
+              <div class="linkedEvidenceCard">
+                <span>Batch evidence</span>
+                <strong id="comparisonDatasetEvidence">-</strong>
+                <p id="comparisonDatasetDetail">Run Dataset evaluation to connect real-image evidence.</p>
+              </div>
+              <div class="linkedEvidenceCard">
+                <span>Weakest sample</span>
+                <strong id="comparisonDatasetWeakest">-</strong>
+                <p id="comparisonDatasetWeakestDetail">Comparison uses the same degradation controls as Dataset.</p>
+              </div>
+              <div class="linkedEvidenceCard">
+                <span>Current link</span>
+                <strong id="comparisonDatasetLink">Synchronized controls</strong>
+                <p>Dataset detector, degradation, and severity are mirrored into model comparison.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="studyPanel">
+            <div class="sectionHeading">
+              <span>Model comparison</span>
+              <strong id="compareSummary">Current condition</strong>
+            </div>
+            <div class="comparisonCards">
+              <div class="comparisonCard">
+                <span>Transformer detector</span>
+                <strong id="transformerMap">-</strong>
+                <p id="transformerFailures">Awaiting comparison</p>
+              </div>
+              <div class="comparisonCard">
+                <span>CNN baseline</span>
+                <strong id="cnnMap">-</strong>
+                <p id="cnnFailures">Awaiting comparison</p>
+              </div>
+              <div class="comparisonCard emphasis">
+                <span>Robustness gap</span>
+                <strong id="robustnessGap">-</strong>
+                <p id="gapInterpretation">Compare both detectors under the same degradation.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="studyPanel">
+            <div class="sectionHeading">
+              <span>Severity sweep</span>
+              <strong id="sweepSummary">mAP by severity</strong>
+            </div>
+            <div id="sweepChart" class="sweepChart" aria-label="Robustness curve"></div>
+          </section>
+        </section>
+      </section>

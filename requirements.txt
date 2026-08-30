@@ -1,0 +1,11 @@
+# Scientific and image-processing dependencies
+numpy==2.5.0
+opencv-python==4.13.0.92
+Pillow==10.3.0
+pycocotools==2.0.11
+PyYAML==6.0.1
+
+# Detector runtimes used by the recorded study
+torch==2.3.1
+torchvision==0.18.1
+transformers==4.57.6

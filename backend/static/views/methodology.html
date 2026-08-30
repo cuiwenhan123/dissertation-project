@@ -1,0 +1,46 @@
+<section class="page" data-page="methodology">
+        <div class="pageTitle">
+          <div>
+            <h2>Methodology</h2>
+            <p>Research framing, experimental variables, metrics, and reproducibility notes for the robustness evaluation.</p>
+          </div>
+        </div>
+
+        <section class="methodGrid">
+          <article class="methodCard">
+            <span>Research question</span>
+            <h3>How do image degradations affect transformer-based object detection?</h3>
+            <p>The system evaluates whether a DETR-style detector remains reliable when image quality is reduced by blur, low illumination, or compression artefacts.</p>
+          </article>
+          <article class="methodCard">
+            <span>Models</span>
+            <h3>Transformer vs CNN baseline</h3>
+            <p>DETR ResNet-50 and Faster R-CNN ResNet-50 FPN run from fixed local COCO-pretrained weights. The primary robustness study keeps both models frozen for a fair baseline.</p>
+          </article>
+          <article class="methodCard">
+            <span>Independent variables</span>
+            <h3>Dataset, degradation, severity</h3>
+            <p>Experiments apply directional motion blur, seeded low-light noise, and JPEG compression at recorded severity levels from 0 to 5.</p>
+          </article>
+          <article class="methodCard">
+            <span>Dependent measures</span>
+            <h3>COCO mAP, AP50, AP75, AR100</h3>
+            <p>Metrics are calculated with pycocotools COCOeval, including small, medium, and large object AP/AR plus one-to-one failure analysis.</p>
+          </article>
+          <article class="methodCard">
+            <span>Robustness trend</span>
+            <h3>Severity curves across degradations</h3>
+            <p>The Curves page converts benchmark rows into mAP trends, making degradation sensitivity easier to compare between model families.</p>
+          </article>
+          <article class="methodCard">
+            <span>Failure modes</span>
+            <h3>Missed, classification, localisation, false positive</h3>
+            <p>Failure analysis translates raw metrics into interpretable categories that can be discussed in the dissertation results chapter.</p>
+          </article>
+          <article class="methodCard">
+            <span>Reproducibility</span>
+            <h3>Exportable benchmark evidence</h3>
+            <p>Each SQLite record stores dataset and model SHA-256 hashes, package versions, random seed, score threshold, and exact degradation settings.</p>
+          </article>
+        </section>
+      </section>

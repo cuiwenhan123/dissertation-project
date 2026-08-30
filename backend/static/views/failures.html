@@ -1,0 +1,71 @@
+<section class="page" data-page="failures">
+        <div class="pageTitle">
+          <div>
+            <h2>Failure cases</h2>
+            <p>Automatically rank uploaded samples by missed detections, low confidence, false positives, and runtime failures.</p>
+          </div>
+          <div class="pageActions">
+            <button id="failureJson" class="secondaryButton" type="button" disabled>Export failure JSON</button>
+          </div>
+        </div>
+
+        <section class="researchGrid failureGrid">
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Failure summary</span>
+              <strong id="failureStatus">Awaiting Dataset batch</strong>
+            </div>
+            <div class="dashboardCards failureCards">
+              <div class="dashboardCard warningCard">
+                <span>Flagged cases</span>
+                <strong id="failureCaseCount">-</strong>
+                <p>Samples needing qualitative inspection.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Dominant mode</span>
+                <strong id="failureDominantMode">-</strong>
+                <p id="failureDominantDetail">Run Dataset evaluation to classify failures.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>High-risk samples</span>
+                <strong id="failureHighRisk">-</strong>
+                <p>Missed GT, processing errors, or zero detections.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Dataset link</span>
+                <strong id="failureDatasetLink">-</strong>
+                <p>Uses the current Dataset batch and selected preview image.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Ranked failure table</span>
+              <strong id="failureTableCount">0 rows</strong>
+            </div>
+            <div class="tableWrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Image</th>
+                    <th>Mode</th>
+                    <th>Risk</th>
+                    <th>GT</th>
+                    <th>Missed</th>
+                    <th>False +</th>
+                    <th>Predictions</th>
+                    <th>Mean confidence</th>
+                    <th>Evidence note</th>
+                    <th>View</th>
+                  </tr>
+                </thead>
+                <tbody id="failureCaseBody">
+                  <tr><td colspan="11">No Dataset batch evidence yet.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </section>

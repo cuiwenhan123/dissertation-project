@@ -1,0 +1,63 @@
+<section class="page" data-page="curves">
+        <div class="pageTitle">
+          <div>
+            <h2>Robustness curves</h2>
+            <p>Visualise how detector quality changes across severity levels for each degradation family.</p>
+          </div>
+          <div class="pageActions">
+            <button id="curvesRun" class="secondaryButton" type="button">Build curves</button>
+            <button id="curvesJson" class="secondaryButton" type="button" disabled>Export curves JSON</button>
+          </div>
+        </div>
+
+        <section class="researchGrid curvesGrid">
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Curve summary</span>
+              <strong id="curvesStatus">Awaiting benchmark data</strong>
+            </div>
+            <div class="dashboardCards">
+              <div class="dashboardCard">
+                <span>Best average model</span>
+                <strong id="curvesBestModel">-</strong>
+                <p id="curvesBestModelDetail">Build curves to compare mean mAP.</p>
+              </div>
+              <div class="dashboardCard warningCard">
+                <span>Steepest drop</span>
+                <strong id="curvesWorstDrop">-</strong>
+                <p id="curvesWorstDropDetail">Largest severity 0 to 5 decline.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Model gap</span>
+                <strong id="curvesMeanGap">-</strong>
+                <p>Average Transformer minus CNN mAP.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Runs behind chart</span>
+                <strong id="curvesRunCount">-</strong>
+                <p>Controlled scene-model-degradation-severity rows.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>mAP curves by degradation</span>
+              <strong>Severity 0-5</strong>
+            </div>
+            <div id="curvesChartGrid" class="curveCards">
+              <div class="emptyState">Run Build curves to generate robustness plots.</div>
+            </div>
+          </section>
+
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Interpretation notes</span>
+              <strong id="curvesInterpretationStatus">Draft</strong>
+            </div>
+            <div id="curvesNotes" class="reportBullets">
+              <p>Curves will turn controlled benchmark rows into thesis-ready degradation trends.</p>
+            </div>
+          </section>
+        </section>
+      </section>

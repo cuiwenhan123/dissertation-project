@@ -1,0 +1,68 @@
+<section class="page" data-page="classAnalysis">
+        <div class="pageTitle">
+          <div>
+            <h2>Class-level analysis</h2>
+            <p>Aggregate labelled dataset results by object category to identify which classes are least robust under degradation.</p>
+          </div>
+          <div class="pageActions">
+            <button id="classJson" class="secondaryButton" type="button" disabled>Export class JSON</button>
+          </div>
+        </div>
+
+        <section class="researchGrid classGrid">
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Class summary</span>
+              <strong id="classStatus">Awaiting labelled Dataset batch</strong>
+            </div>
+            <div class="dashboardCards classCards">
+              <div class="dashboardCard">
+                <span>Labelled classes</span>
+                <strong id="classLabelCount">-</strong>
+                <p>Classes with ground-truth or unmatched prediction evidence.</p>
+              </div>
+              <div class="dashboardCard warningCard">
+                <span>Weakest class</span>
+                <strong id="classWorstClass">-</strong>
+                <p id="classWorstDetail">Run a labelled zip batch to populate class-level errors.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Mean class AP50</span>
+                <strong id="classMeanAp50">-</strong>
+                <p>Average AP50 across classes with GT annotations.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Dataset link</span>
+                <strong id="classDatasetLink">-</strong>
+                <p>Uses the current Dataset batch, including YOLO or COCO labels.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Per-class robustness table</span>
+              <strong id="classTableCount">0 rows</strong>
+            </div>
+            <div class="tableWrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>GT</th>
+                    <th>Matched</th>
+                    <th>Missed</th>
+                    <th>False +</th>
+                    <th>AP50</th>
+                    <th>Mean IoU</th>
+                    <th>Risk note</th>
+                  </tr>
+                </thead>
+                <tbody id="classAnalysisBody">
+                  <tr><td colspan="8">No class evidence yet. Upload a labelled zip dataset first.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </section>

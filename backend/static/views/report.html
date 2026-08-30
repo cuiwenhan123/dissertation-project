@@ -1,0 +1,85 @@
+<section class="page" data-page="report">
+        <div class="pageTitle">
+          <div>
+            <h2>Research report</h2>
+            <p>Turn batch results and benchmark evidence into a concise interpretation for supervisor meetings and dissertation notes.</p>
+          </div>
+          <div class="pageActions">
+            <button id="refreshReport" class="secondaryButton" type="button">Refresh report</button>
+            <button id="printReport" class="secondaryButton" type="button" disabled>Print / PDF</button>
+            <button id="exportReport" class="secondaryButton" type="button" disabled>Export Markdown</button>
+          </div>
+        </div>
+
+        <section class="researchGrid reportGrid">
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Report summary</span>
+              <strong id="reportStatus">Awaiting evidence</strong>
+            </div>
+            <div class="dashboardCards">
+              <div class="dashboardCard">
+                <span>Dataset images</span>
+                <strong id="reportImageCount">-</strong>
+                <p id="reportDatasetDetail">Run Dataset batch evaluation to populate this section.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Mean confidence</span>
+                <strong id="reportMeanConfidence">-</strong>
+                <p>Average detector confidence across uploaded images.</p>
+              </div>
+              <div class="dashboardCard warningCard">
+                <span>Weakest sample</span>
+                <strong id="reportWeakestSample">-</strong>
+                <p id="reportWeakestDetail">Lowest-confidence or failed image.</p>
+              </div>
+              <div class="dashboardCard">
+                <span>Benchmark conclusion</span>
+                <strong id="reportBestModel">-</strong>
+                <p id="reportBenchmarkDetail">Run Benchmark to include controlled robustness evidence.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="studyPanel">
+            <div class="sectionHeading">
+              <span>Worst-case samples</span>
+              <strong id="reportWorstCount">0 listed</strong>
+            </div>
+            <div class="tableWrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Image</th>
+                    <th>Predictions</th>
+                    <th>Mean confidence</th>
+                    <th>Failure note</th>
+                  </tr>
+                </thead>
+                <tbody id="reportWorstBody">
+                  <tr><td colspan="5">No batch evidence yet.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="studyPanel">
+            <div class="sectionHeading">
+              <span>Failure-mode interpretation</span>
+              <strong id="reportInterpretationStatus">Draft</strong>
+            </div>
+            <div id="reportBullets" class="reportBullets">
+              <p>Run a Dataset batch and Benchmark to generate evidence-backed interpretation.</p>
+            </div>
+          </section>
+
+          <section class="studyPanel dashboardPanel">
+            <div class="sectionHeading">
+              <span>Markdown report</span>
+              <strong>Meeting-ready draft</strong>
+            </div>
+            <pre id="reportMarkdown" class="reportMarkdown">No report generated yet.</pre>
+          </section>
+        </section>
+      </section>

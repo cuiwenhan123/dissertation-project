@@ -1,0 +1,149 @@
+<section class="page" data-page="transitions">
+        <div class="pageTitle">
+          <div>
+            <h2>Object-level failure transitions</h2>
+            <p>Follow the same annotated objects across severity levels using the frozen 500-image study.</p>
+          </div>
+          <div class="pageActions transitionActions">
+            <select id="transitionModel" aria-label="Transition model">
+              <option value="transformer">DETR Transformer</option>
+              <option value="cnn">Faster R-CNN</option>
+            </select>
+            <select id="transitionDegradation" aria-label="Transition degradation">
+              <option value="blur">Motion blur</option>
+              <option value="lowlight">Low illumination</option>
+              <option value="jpeg">JPEG artefacts</option>
+            </select>
+            <button id="transitionJson" class="secondaryButton" type="button" disabled>Export JSON</button>
+          </div>
+        </div>
+
+        <section class="transitionSummaryBand" aria-label="Transition summary">
+          <div class="sectionHeading">
+            <span>Frozen study evidence</span>
+            <strong id="transitionStatus">Loading analysis</strong>
+          </div>
+          <dl class="transitionStats">
+            <div>
+              <dt>Objects tracked</dt>
+              <dd id="transitionObjectCount">-</dd>
+              <p>Ground-truth objects followed from severity 0 to 5.</p>
+            </div>
+            <div>
+              <dt>Clean-correct</dt>
+              <dd id="transitionCleanCorrect">-</dd>
+              <p>Objects correctly detected before degradation.</p>
+            </div>
+            <div>
+              <dt>Median first failure</dt>
+              <dd id="transitionMedianFailure">-</dd>
+              <p>Median severity among clean-correct objects that fail.</p>
+            </div>
+            <div>
+              <dt>Stable through S5</dt>
+              <dd id="transitionStableRate">-</dd>
+              <p>Clean-correct objects never leaving the correct state.</p>
+            </div>
+          </dl>
+        </section>
+
+        <section class="transitionsGrid">
+          <section class="studyPanel transitionChartPanel">
+            <div class="sectionHeading">
+              <span>Detection survival</span>
+              <strong id="transitionSurvivalLabel">Severity 0 to 5</strong>
+            </div>
+            <div id="transitionSurvivalChart" class="transitionChart"></div>
+          </section>
+
+          <section class="studyPanel transitionChartPanel">
+            <div class="sectionHeading">
+              <span>First failure severity</span>
+              <strong id="transitionFailureTotal">-</strong>
+            </div>
+            <div id="transitionFailureBars" class="failureBars"></div>
+          </section>
+
+          <section class="studyPanel transitionMatrixPanel">
+            <div class="sectionHeading">
+              <span>Adjacent-state transition matrix</span>
+              <select id="transitionStep" aria-label="Transition severity step">
+                <option value="0">Severity 0 to 1</option>
+                <option value="1">Severity 1 to 2</option>
+                <option value="2">Severity 2 to 3</option>
+                <option value="3">Severity 3 to 4</option>
+                <option value="4">Severity 4 to 5</option>
+              </select>
+            </div>
+            <div class="tableWrap transitionMatrixWrap">
+              <table class="transitionMatrix">
+                <thead>
+                  <tr>
+                    <th>From / to</th>
+                    <th>Correct</th>
+                    <th>Localisation</th>
+                    <th>Classification</th>
+                    <th>Missed</th>
+                  </tr>
+                </thead>
+                <tbody id="transitionMatrixBody">
+                  <tr><td colspan="5">Loading transition matrix.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="studyPanel transitionSizePanel">
+            <div class="sectionHeading">
+              <span>Object-size vulnerability</span>
+              <strong>Clean-correct cohort</strong>
+            </div>
+            <div class="tableWrap">
+              <table class="transitionSizeTable">
+                <thead>
+                  <tr>
+                    <th>Size</th>
+                    <th>Objects</th>
+                    <th>Clean-correct</th>
+                    <th>Failed by S2</th>
+                    <th>Stable through S5</th>
+                    <th>S5 correct retention</th>
+                  </tr>
+                </thead>
+                <tbody id="transitionSizeBody">
+                  <tr><td colspan="6">Loading size analysis.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="studyPanel transitionExamplesPanel">
+            <div class="sectionHeading">
+              <span>Representative object trajectories</span>
+              <strong id="transitionExampleCount">-</strong>
+            </div>
+            <div class="tableWrap">
+              <table class="transitionExamplesTable">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Object</th>
+                    <th>Size</th>
+                    <th>First failure</th>
+                    <th>S0</th>
+                    <th>S1</th>
+                    <th>S2</th>
+                    <th>S3</th>
+                    <th>S4</th>
+                    <th>S5</th>
+                    <th>Recovery</th>
+                  </tr>
+                </thead>
+                <tbody id="transitionExamplesBody">
+                  <tr><td colspan="11">Loading object trajectories.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </section>

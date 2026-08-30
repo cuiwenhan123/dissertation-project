@@ -1,0 +1,196 @@
+<section class="page" data-page="dataset">
+        <div class="pageTitle">
+          <div>
+            <h2>Dataset image evaluation</h2>
+            <p>Upload images or a zip archive, apply the selected degradation, and inspect detector predictions as a small experiment batch.</p>
+          </div>
+          <div class="pageActions">
+            <button id="datasetCsv" class="secondaryButton" type="button" disabled>Export CSV</button>
+            <button id="datasetJson" class="secondaryButton" type="button" disabled>Export JSON</button>
+            <button id="uploadRun" class="runButton" type="button">
+              <span class="buttonIcon" aria-hidden="true"></span>
+              <span>Run batch</span>
+            </button>
+          </div>
+        </div>
+
+        <section class="uploadGrid">
+          <aside class="controlPanel">
+            <div class="panelHeading">
+              <span>Upload setup</span>
+              <strong id="uploadSeverityBadge">Severity 3</strong>
+            </div>
+
+            <label for="uploadFile">Images or zip archive</label>
+            <input id="uploadFile" type="file" accept="image/*,.zip,application/zip" multiple />
+
+            <label for="uploadModel">Detector</label>
+            <select id="uploadModel">
+              <option value="transformer">DETR-style Transformer</option>
+              <option value="cnn">Faster R-CNN-style Baseline</option>
+            </select>
+
+            <label for="uploadDegradation">Degradation</label>
+            <select id="uploadDegradation">
+              <option value="blur">Motion blur</option>
+              <option value="lowlight">Low illumination</option>
+              <option value="jpeg">JPEG artefacts</option>
+            </select>
+
+            <label for="uploadSeverity">Severity</label>
+            <input id="uploadSeverity" type="range" min="0" max="5" value="3" />
+
+            <div class="backendCard">
+              <span>Uploaded-image backend</span>
+              <strong id="uploadBackend">-</strong>
+            </div>
+
+            <div class="backendCard">
+              <span>Batch progress</span>
+              <strong id="uploadBatchProgress">No files selected</strong>
+            </div>
+          </aside>
+
+          <section class="resultsPanel">
+            <div class="images">
+              <figure>
+                <figcaption>
+                  <span>Uploaded input</span>
+                  <strong>Original</strong>
+                </figcaption>
+                <img id="uploadOriginal" alt="Uploaded input preview" />
+              </figure>
+              <figure>
+                <figcaption>
+                  <span>Degraded input</span>
+                  <strong>Predictions</strong>
+                </figcaption>
+                <img id="uploadResult" alt="Uploaded degraded image with prediction boxes" />
+              </figure>
+            </div>
+
+            <section class="metrics" aria-label="Uploaded image prediction metrics">
+              <div class="metric primaryMetric">
+                <span>Predictions</span>
+                <strong id="uploadPredictionCount">-</strong>
+              </div>
+              <div class="metric">
+                <span>Mean confidence</span>
+                <strong id="uploadMeanConfidence">-</strong>
+              </div>
+              <div class="metric">
+                <span>Small objects</span>
+                <strong id="uploadSmallCount">-</strong>
+              </div>
+              <div class="metric">
+                <span>Large objects</span>
+                <strong id="uploadLargeCount">-</strong>
+              </div>
+            </section>
+
+            <section class="analysisPanel" aria-label="Uploaded image analysis">
+              <div>
+                <span>Batch analysis</span>
+                <p id="uploadAnalysisText">Choose real images and run batch evaluation.</p>
+              </div>
+            </section>
+
+
+            <section class="studyPanel datasetPreviewPanel" aria-label="Dataset preview">
+              <div class="sectionHeading">
+                <span>Dataset preview</span>
+                <strong id="datasetPreviewStatus">Awaiting files</strong>
+              </div>
+              <div class="dashboardCards previewCards">
+                <div class="dashboardCard">
+                  <span>Images found</span>
+                  <strong id="previewImageCount">-</strong>
+                  <p>Supported image files ready for evaluation.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Matched labels</span>
+                  <strong id="previewLabelCount">-</strong>
+                  <p>YOLO .txt or COCO JSON annotations matched to images.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Coverage</span>
+                  <strong id="previewCoverage">-</strong>
+                  <p id="previewCoverageDetail">Preview labels before running expensive inference.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Classes</span>
+                  <strong id="previewClassSummary">-</strong>
+                  <p>Top labelled object categories and detected annotation format.</p>
+                </div>
+              </div>
+              <div id="previewSampleList" class="sampleList">Select images or a zip archive to inspect dataset composition.</div>
+            </section>
+
+            <section class="studyPanel datasetTablePanel" aria-label="Dataset batch results">
+              <div class="sectionHeading">
+                <span>Batch results</span>
+                <strong id="uploadBatchCount">0 images</strong>
+              </div>
+              <div class="dashboardCards compactCards">
+                <div class="dashboardCard">
+                  <span>Mean detections</span>
+                  <strong id="datasetMeanDetections">-</strong>
+                  <p>Average predicted objects per uploaded image.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Mean confidence</span>
+                  <strong id="datasetMeanConfidence">-</strong>
+                  <p>Average confidence across the batch.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Weakest image</span>
+                  <strong id="datasetWeakestImage">-</strong>
+                  <p id="datasetWeakestDetail">Lowest confidence or no predictions.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Label coverage</span>
+                  <strong id="datasetLabelCoverage">-</strong>
+                  <p id="datasetLabelDetail">YOLO label files enable real AP and IoU scoring.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Labelled AP50</span>
+                  <strong id="datasetLabelAp50">-</strong>
+                  <p id="datasetLabelAp50Detail">Average AP50 for images with ground-truth labels.</p>
+                </div>
+                <div class="dashboardCard">
+                  <span>Runtime status</span>
+                  <strong id="datasetBackendSummary">-</strong>
+                  <p>Detector backend used for the last completed image.</p>
+                </div>
+              </div>
+              <div class="tableWrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Image</th>
+                      <th>Model</th>
+                      <th>Degradation</th>
+                      <th>Severity</th>
+                      <th>Annotation</th>
+                      <th>GT</th>
+                      <th>Matched</th>
+                      <th>Missed</th>
+                      <th>False +</th>
+                      <th>AP50</th>
+                      <th>Mean IoU</th>
+                      <th>Predictions</th>
+                      <th>Mean confidence</th>
+                      <th>Backend</th>
+                      <th>View</th>
+                    </tr>
+                  </thead>
+                  <tbody id="uploadBatchBody">
+                    <tr><td colspan="16">No uploaded-image experiment recorded yet.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+        </section>
+      </section>

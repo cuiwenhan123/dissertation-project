@@ -1,0 +1,149 @@
+@media (max-width: 1050px) {
+  .workbench,
+  .uploadGrid,
+  .images,
+  .metrics,
+  .researchGrid,
+  .comparisonCards,
+  .dashboardCards,
+  .linkedEvidenceCards,
+  .methodGrid,
+  .curveCards,
+  .previewCards,
+  .failureCards,
+  .classCards,
+  .transitionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .transitionStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 0;
+  }
+
+  .transitionStats > div:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .studyControls {
+    grid-template-columns: 1fr;
+  }
+
+  .controlPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .shell {
+    padding: 12px;
+  }
+
+  .appHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .headerActions,
+  .runButton,
+  .pageActions,
+  .pageTitle {
+    width: 100%;
+  }
+
+  .pageTitle {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .runButton,
+  .secondaryButton {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .runtimePill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .transitionActions select {
+    width: 100%;
+  }
+
+  .transitionStats {
+    grid-template-columns: 1fr;
+  }
+
+  .transitionStats > div,
+  .transitionStats > div:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 14px 0 0;
+  }
+
+  .transitionStats > div:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .failureBarRow {
+    grid-template-columns: 82px minmax(70px, 1fr) 92px;
+  }
+}
+
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .shell {
+    max-width: none;
+    padding: 0;
+  }
+
+  .appHeader,
+  .pageNav,
+  .pageTitle .pageActions,
+  body.printMode .page:not([data-page="report"]) {
+    display: none !important;
+  }
+
+  body.printMode .page[data-page="report"] {
+    display: block !important;
+  }
+
+  .pageTitle,
+  .studyPanel,
+  .dashboardCard,
+  .reportMarkdown {
+    box-shadow: none;
+    border-color: #c9d3ce;
+    background: #fff;
+  }
+
+  .researchGrid,
+  .reportGrid,
+  .dashboardCards {
+    display: block;
+  }
+
+  .studyPanel,
+  .dashboardCard {
+    break-inside: avoid;
+    margin-bottom: 14px;
+  }
+
+  table {
+    min-width: 0;
+    font-size: 11px;
+  }
+
+  th,
+  td {
+    white-space: normal;
+  }
+}

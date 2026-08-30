@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detection Robustness Workbench</title>
+    <link rel="stylesheet" href="css/base.css?v=1" />
+    <link rel="stylesheet" href="css/components.css?v=1" />
+    <link rel="stylesheet" href="css/research-pages.css?v=1" />
+    <link rel="stylesheet" href="css/responsive.css?v=1" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="appHeader">
+        <div class="titleBlock">
+          <h1>Detection Robustness Workbench</h1>
+          <p>Controlled image degradation, model comparison, and failure-mode inspection.</p>
+        </div>
+        <div class="headerActions">
+          <div class="runtimePill">
+            <span class="dot" id="runtimeDot"></span>
+            <span id="runtimeLabel">Starting backend</span>
+          </div>
+        </div>
+      </header>
+
+      <nav class="pageNav" aria-label="Workbench sections">
+        <button class="navTab active" type="button" data-target-page="overview">Overview</button>
+        <button class="navTab" type="button" data-target-page="dataset">Dataset</button>
+        <button class="navTab" type="button" data-target-page="classAnalysis">Class Analysis</button>
+        <button class="navTab" type="button" data-target-page="failures">Failure Cases</button>
+        <button class="navTab" type="button" data-target-page="transitions">Transitions</button>
+        <button class="navTab" type="button" data-target-page="comparison">Comparison</button>
+        <button class="navTab" type="button" data-target-page="curves">Curves</button>
+        <button class="navTab" type="button" data-target-page="benchmark">Benchmark</button>
+        <button class="navTab" type="button" data-target-page="report">Report</button>
+        <button class="navTab" type="button" data-target-page="log">Experiment log</button>
+        <button class="navTab" type="button" data-target-page="methodology">Methodology</button>
+      </nav>
+
+      <div id="pageHost" aria-live="polite"></div>
+    </main>
+    <script type="module" src="js/app.js?v=1"></script>
+  </body>
+</html>
