@@ -24,6 +24,7 @@ venv/
 # Runtime state and generated exports
 runs/*
 !runs/.gitkeep
+!runs/experiments.sqlite3
 exports/
 *.log
 

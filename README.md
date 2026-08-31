@@ -182,7 +182,7 @@ JSON request bodies are size-limited by `ROBUSTNESS_MAX_REQUEST_BYTES`. Static d
 
 Research conclusions must come from a completed labelled real-model study. Synthetic scenes and fallback predictions are demonstrations only. The workbench does not fine-tune either detector and does not claim that the tested corruption functions reproduce every deployment condition. Results apply to the named model weights, preprocessing pipelines, dataset subset, and recorded configuration.
 
-The repository includes the 32 compressed prediction archives used by the main study, the fixed 500-image manifest, aggregate condition metrics, object-transition records, paired bootstrap outputs, leave-block-out checks, and SHA-256 checksums under `research_evidence/chapter4_main_study/`. The workbench-ready archive remains under `backend/research_data/`. Run `python sync_previous_study.py` to reconstruct `runs/experiments.sqlite3`; the generated local database is intentionally not tracked.
+The repository includes the 32 compressed prediction archives used by the main study, the fixed 500-image manifest, aggregate condition metrics, object-transition records, paired bootstrap outputs, leave-block-out checks, and SHA-256 checksums under `research_evidence/chapter4_main_study/`. The workbench-ready archive remains under `backend/research_data/`. Run `python sync_previous_study.py` to reconstruct `runs/experiments.sqlite3`. The `codex/database-snapshot` branch additionally tracks a clean, reconstructed SQLite snapshot for direct inspection; runtime databases remain generated state on `main`.
 
 ## Repository Policy
 
